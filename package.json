@@ -1,0 +1,56 @@
+{
+  "name": "clipforge",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/render-worker",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx scripts/dev.ts",
+    "web": "next dev apps/web -H 0.0.0.0",
+    "worker": "node --env-file-if-exists=.env --import tsx apps/render-worker/src/index.ts",
+    "db:migrate": "node --import tsx packages/core/migrate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke": "bash scripts/smoke.sh",
+    "build": "next build apps/web",
+    "catalog": "node --import tsx scripts/catalog.ts",
+    "format": "prettier --write apps packages scripts tests docs README.md package.json tsconfig.json",
+    "format:check": "prettier --check apps packages scripts tests docs README.md package.json tsconfig.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@remotion/bundler": "4.0.484",
+    "@remotion/player": "4.0.484",
+    "@remotion/renderer": "4.0.484",
+    "better-sqlite3": "^11.10.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.44.2",
+    "lucide-react": "^0.511.0",
+    "next": "15.5.28",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.484",
+    "tailwind-merge": "^3.3.0",
+    "undici": "^7.30.1",
+    "zod": "^3.25.67",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  },
+  "type": "module"
+}

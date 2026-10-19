@@ -1,0 +1,8 @@
+fastapi==0.115.12
+uvicorn==0.34.3
+numpy>=1.26,<2
+scenedetect[opencv]==0.6.6
+mediapipe==0.10.21
+python-multipart==0.0.20
+httpx==0.28.1
+yt-dlp[default]==2026.8.19

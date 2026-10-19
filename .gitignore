@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.next-dev/
+.env
+storage/*
+!storage/.gitkeep
+.venv/
+.venv-whisper/
+__pycache__/
+*.tsbuildinfo
+coverage/
+
+.env.*
+!.env.example
+.DS_Store
+*.log
+docs/evidence/
